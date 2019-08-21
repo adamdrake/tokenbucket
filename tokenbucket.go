@@ -14,7 +14,7 @@ type TokenBucket struct {
 
 // NewTokenBucket takes an initial capacity for the rate limiter and a refreshRate
 // which determines the time between adding single units of capacity to the limiter
-func NewTokenBucket(initialCapacity, totalCapacity uint64, refreshRate time.Duration) *TokenBucket {
+func New(initialCapacity, totalCapacity uint64, refreshRate time.Duration) *TokenBucket {
 	t := time.Now()
 	return &TokenBucket{
 		tokenCount:  initialCapacity,

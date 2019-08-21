@@ -18,7 +18,7 @@ import (
 )
 
 func main() {
-    b := tokenbucket.NewTokenBucket(uint64(10), uint64(10), 3 * time.Second)
+    b := tokenbucket.New(uint64(10), uint64(10), 3 * time.Second)
     i := 0
     for _ = range time.NewTicker(1 * time.Second).C {
         fmt.Println(i, b.Take())
